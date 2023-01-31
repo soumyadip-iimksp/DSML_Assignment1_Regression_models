@@ -27,43 +27,43 @@ Divide the data into 70%, 15% and 15% training, validation and test set.
 
 ### Outputs
 
-**Linear Regression**
-*Original data*
-Val RMSE: 5.5598
-Val R Squared: 0.7008
-Test RMSE: 6.1341
-Test R Squared: 0.6189
-*Lin_Log*
-Val RMSE: 5.2077
-Val R Squared: 0.7375
-Test RMSE: `4.9554`
-Test R Squared: `0.7513`
-*Log_Lin*
-Val RMSE: 0.3472
-Val R Squared: 0.7651
-Test RMSE: 0.3822
-Test R Squared: 0.6756
-*Log_Log*
-Val RMSE: 0.3829
-Val R Squared: 0.7143
-Test RMSE: 0.3565
-Test R Squared: 0.7177
+**Linear Regression**<br>
+*Original data*<br>
+Val RMSE: 5.5598<br>
+Val R Squared: 0.7008<br>
+Test RMSE: 6.1341<br>
+Test R Squared: 0.6189<br>
+*Lin_Log*<br>
+Val RMSE: 5.2077<br>
+Val R Squared: 0.7375<br>
+Test RMSE: `4.9554`<br>
+Test R Squared: `0.7513`<br>
+*Log_Lin*<br>
+Val RMSE: 0.3472<br>
+Val R Squared: 0.7651<br>
+Test RMSE: 0.3822<br>
+Test R Squared: 0.6756<br>
+*Log_Log*<br>
+Val RMSE: 0.3829<br>
+Val R Squared: 0.7143<br>
+Test RMSE: 0.3565<br>
+Test R Squared: 0.7177<br>
 
 Choosing the best transformation **Lin-Log** for *Ridge* and *Lasso* Regression
 
-**Ridge**
-*Lin_Log*
-Val RMSE: 5.0037
-Val R Squared: 0.7577
-Test RMSE: `5.1454`
-Test R Squared: `0.7319`
+**Ridge**<br>
+*Lin_Log*<br>
+Val RMSE: 5.0037<br>
+Val R Squared: 0.7577<br>
+Test RMSE: `5.1454`<br>
+Test R Squared: `0.7319`<br>
 
-**Lasso**
-*Lin_Log*
-Val RMSE: 6.5309
-Val R Squared: 0.5871
-Test RMSE: `7.1149`
-Test R Squared: `0.4873`
+**Lasso**<br>
+*Lin_Log*<br>
+Val RMSE: 6.5309<br>
+Val R Squared: 0.5871<br>
+Test RMSE: `7.1149`<br>
+Test R Squared: `0.4873`<br>
 
 Hyperparameter Tuning with *alpha*
 
