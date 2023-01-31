@@ -11,6 +11,8 @@ import pandas as pd
 import numpy as np
 import pickle
 import os
+import warnings
+warnings.filterwarnings("ignore")
 
 class Model:
 
@@ -242,24 +244,24 @@ class Model:
           
         self.metrics = pd.DataFrame(list(zip(np.round(self.alphas, 2), np.round(self.r2_scores, 3), np.round(self.rmse_scores, 3))), columns=["alpha", "R2", "rmse"])
         print(self.metrics)
-        self.best_alpha = self.metrics["alpha"][self.metrics["R2"] == max(self.metrics["R2"])]
-        #print(f"alpha= {self.best_alpha}")
-        # if model_name == "Ridge":
-        #     self.best_model = Ridge(alpha=self.best_alpha.astype("float"))
-        # elif model_name == "Lasso":
-        #     self.best_model = Lasso(alpha=self.best_alpha.astype("float"))
+        self.best_alpha = max(self.metrics["alpha"][self.metrics["R2"] == max(self.metrics["R2"])])
+        print(f"alpha= {self.best_alpha}")
+        if model_name == "Ridge":
+            self.best_model = Ridge(alpha=self.best_alpha)
+        elif model_name == "Lasso":
+            self.best_model = Lasso(alpha=self.best_alpha)
 
         
-        # self.best_model.fit(self.train_X, self.train_y)
+        self.best_model.fit(self.train_X, self.train_y)
 
-        # with open(f"./models/{model_name}_best_{self.dv_name}.bin", "wb") as f_out:
-        #     pickle.dump(self.model, f_out)
-        
-        # self.test_rmse = np.sqrt(mean_squared_error(self.test_y, self.test_pred))
-        # self.test_r_squared = r2_score(self.test_y, self.test_pred)
+        with open(f"./models/{model_name}_best_{self.dv_name}.bin", "wb") as f_out:
+            pickle.dump(self.best_model, f_out)
+        self.test_pred = self.best_model.predict(self.test_X)
+        self.test_rmse = np.sqrt(mean_squared_error(self.test_y, self.test_pred))
+        self.test_r_squared = r2_score(self.test_y, self.test_pred)
 
-        # print(f"Test RMSE: {round(self.test_rmse, 4)}")
-        # print(f"Test R Squared: {round(self.test_r_squared, 4)}")
+        print(f"Test RMSE: {round(self.test_rmse, 4)}")
+        print(f"Test R Squared: {round(self.test_r_squared, 4)}")
         
         return self.best_alpha
 
