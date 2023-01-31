@@ -69,8 +69,8 @@ Hyperparameter Tuning with *alpha*
 
 **Ridge Regression**
 
-    alpha | R2 | rmse
-    --- | --- | ---
+   | alpha | R2 | rmse |
+   | --- | --- | --- |
      0.0 | 0.737 | 5.208
      0.1 | 0.752 | 5.064
      0.2 | 0.757 | 5.012
@@ -87,8 +87,8 @@ Hyperparameter Tuning with *alpha*
 **Test R Squared:** `0.7319`
 
 **Lasso regression**
-    alpha | R2 | rmse
-    --- | --- | ---
+     | alpha | R2 | rmse |
+     | --- | --- | --- |
       0.0 | 0.737 | 5.208
       0.1 | 0.682 | 5.733
       0.2 | 0.640 | 6.094
@@ -105,6 +105,6 @@ Hyperparameter Tuning with *alpha*
 **Test R Squared:** `0.7513`
 
 
-**Observation:** Linear regression with R-square value of `0.7513` has few features which as not significant (testes separately with OLS models) and leading to inflated R2 value with some overfitting to noise. Ridge Regression with the `L2 Regularizer` penalises those not significant features and has reduces the R-square value minimaly to `0.7319`. Lasso regression is not adding any improvement as at `alpha=0`, it is acting as a Linear regression model.
+**Observation:** Linear regression with R-square value of `0.7513` has few features which as not significant (testes separately with OLS models) and leading to inflated R2 value with some overfitting to noise. Ridge Regression with the `L2 Regularizer` penalises those not significant features and has reduces the R-square value minimaly to `0.7319`. Lasso regression at `alpha=0`, it is acting as a Linear regression model. WIth increaase in *alpha*, it is suppressing the features and at `alpha=1.0`, the coefficient of some of the unwanted features has completely turned to *Zero* thereby affecting the R-square value and increase in `RMSE`
 
 Further improvemnts can be tried with k-Fold Cross Validation
