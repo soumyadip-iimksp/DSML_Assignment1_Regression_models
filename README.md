@@ -87,8 +87,9 @@ Hyperparameter Tuning with *alpha*
 **Test R Squared:** `0.7319`
 
 **Lasso regression**
-     | alpha | R2 | rmse |
-     | --- | --- | --- |
+
+   | alpha | R2 | rmse |
+   | --- | --- | --- |
       0.0 | 0.737 | 5.208
       0.1 | 0.682 | 5.733
       0.2 | 0.640 | 6.094
@@ -99,7 +100,7 @@ Hyperparameter Tuning with *alpha*
       0.7 | 0.532 | 6.956
       0.8 | 0.498 | 7.202
       0.9 | 0.460 | 7.467
-      1.0 | 0.418 | 7.751
+      1.0 | 0.418 | 7.7511
 **best alpha=** `0.0`
 **Test RMSE:** `4.9554`
 **Test R Squared:** `0.7513`
